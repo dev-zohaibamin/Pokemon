@@ -1,3 +1,8 @@
+## Live URL:
+https://pokemon-40924.web.app/
+## email: test@gmail.com
+## password: admin12345
+
 # Pokemon
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
