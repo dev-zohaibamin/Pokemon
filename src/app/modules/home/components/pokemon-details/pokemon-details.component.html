@@ -1,0 +1,42 @@
+<mat-card class="card" *ngIf="pokemonDetails$ | async as response">
+
+    <mat-card-header>
+        <img class="avatar" [src]="response.data.sprites.front_shiny" [alt]="response?.data?.name">
+        <mat-card-title>{{ response?.data?.name | titlecase }}</mat-card-title>
+        <mat-card-subtitle>Pokemon</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-form-field>
+        <mat-label>{{ response?.data?.name | titlecase }} Moves</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let move of response.data.moves" [value]="move.move.name">
+                {{move.move.name| titlecase}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="types">
+        <mat-label>{{ response?.data?.name | titlecase }} Types</mat-label>
+        <mat-chip-listbox>
+            <mat-chip-option *ngFor="let type of response.data.types">{{type?.type?.name | titlecase}}</mat-chip-option>
+        </mat-chip-listbox>
+    </div>
+
+    <mat-form-field class="indices">
+        <mat-label>{{ response?.data?.name | titlecase }} Game Indices</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let indices of response.data.game_indices" [value]="indices.version.name">
+                {{indices.version.name| titlecase}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="stats">
+        <mat-label>{{ response?.data?.name | titlecase }} Stats</mat-label>
+        <mat-chip-listbox>
+            <mat-chip-option *ngFor="let stats of response.data.stats">{{stats?.stat?.name |
+                titlecase}}</mat-chip-option>
+        </mat-chip-listbox>
+    </div>
+
+</mat-card>

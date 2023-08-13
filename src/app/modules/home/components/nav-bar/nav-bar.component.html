@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <header routerLink="/home/pokemon" style="cursor: pointer;">
+        <img style="height: 35px;" src="/assets/images/logo.png">
+    </header>
+
+    <label class="pokemon-label">Pokémon</label>
+    <label routerLink="/login" (click)="clearLocalStorage()" class="logout-label">Logout</label>
+
+</mat-toolbar>
+<section>
+    <router-outlet></router-outlet>
+</section>

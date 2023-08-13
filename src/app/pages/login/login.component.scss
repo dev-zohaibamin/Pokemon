@@ -1,0 +1,25 @@
+.container {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card {
+  max-width: 400px;
+  margin: auto 0;
+  padding: 20px;
+
+  mat-card-header {
+    align-self: center;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
